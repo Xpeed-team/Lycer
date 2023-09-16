@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lycer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./chnage/library/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./chnage/css/styles.css" />
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .box14 {
+    border: 1px #000000D9 solid;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:  auto;
+    font-weight: bolder;
+    font-size: larger;
+    border-radius: 10px;
+    background: #3344CC12;
+    height: 105%;
+  }
+
+  .box14>* {
+    margin: 10px;
+    color: #0E1F51 !important;
+  }
+
+  .box14>input {
+    border: 2px #808080 solid;
+    padding: 10px;
+  }
+
+  .contanir {
+    margin: auto ;
+    margin-bottom: 50px;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 285px);
+    grid-template-rows: repeat(2, 65px);
+    grid-template-areas:
+      "one tow "
+      "three four";
+    /* grid-gap: 20px; */
+    grid-row-gap:30px ;
+    grid-column-gap: 30px;
+  }
+
+  .item1 {
+    grid-area: one;
+  }
+
+  .item2 {
+    grid-area: tow;
+  }
+
+  .item3 {
+    grid-area: three;
+  }
+
+  .item4 {
+    grid-area: four;
+  }
+
+  @media screen and (max-width: 750px) {
+    .contanir {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+    }
+    .box14{
+      width: 90%;
+    }
+  }
+</style>
+<body class="wrapper">
+  <!-- Header Start -->
+  <header id="HEADER"></header>
+  <br><br><br>
+  <!-- Header End -->
+  <h1 class="text-center my-5 textColor1">Choose the type of examination</h1>
+  <div class="contanir" id="cont">
+    <div class="item1 box14">
+      <input class="form-check-input" id="input1" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+      <p>Fresh water</p>
+    </div>
+    <div class="item2 box14">
+      <input class="form-check-input" id="input2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option2">
+      <p>Aquatic life</p>
+    </div>
+    <div class="item3 box14">
+      <input class="form-check-input" id="input3" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option3">
+      <p>Agricultural</p>
+    </div>
+    <div class="item4 box14">
+      <input class="form-check-input" id="input4" style="position: relative; left: 23px;" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option4">
+      <p style="position: relative; left: 20px;">Raw drinking water</p>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between">
+    <a type="button" class="btn btn-outline-primary fw-semibold m-5" style="width: 15%;"  href="../html/startNow2contery.html"><i
+        class="bi bi-chevron-double-left"></i>Back</a>
+    <a type="button" class="btn btn-outline-primary fw-semibold m-5" style="width: 15%;" id="link" href="">Next<i
+        class="bi bi-chevron-double-right"></i></a>
+  </div>
+
+
+  <footer class="footer pt-5" id="FOOTER"></footer>
+  <!-- Footer End -->
+
+  <script src="./chnage/main1.js"></script>
+  <script src="./chnage/mianInput.js"></script>
+  <script src="./chnage/library/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./chnage/library/jquery-3.6.0.min.js"></script>
+
+  <script src="./chnage/script.js"></script>
+
+</body>
+
+</html>
