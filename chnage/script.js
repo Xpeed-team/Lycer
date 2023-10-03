@@ -7,6 +7,7 @@ const bottoms = document.getElementsByClassName("bottoms");
 const person = document.getElementsByClassName("person");
 const itemZ = document.getElementsByClassName("itemZ");
 const water = document.getElementsByClassName("water");
+console.log(water);
 const end = document.getElementById("end");
 const end2 = document.getElementById("end2");
 
@@ -84,6 +85,7 @@ window.onscroll = () => {
   //4 is from 2 to 5
   for (let i = 0; i < 3; i++) {
     if (i == 1) {
+      //1
       if (
         window.scrollY >= water[0].offsetTop &&
         window.scrollY < water[2].offsetTop
@@ -94,16 +96,30 @@ window.onscroll = () => {
         water[i].classList.remove("rightItem");
         water[i].classList.add("rightItemN");
       }
+    } else if (i == 0) {
+      if (
+        window.scrollY >= water[1].offsetTop &&
+        window.scrollY < water[i + 2].offsetTop
+      ) {
+        water[i + 2].classList.remove("rightItemN");
+        water[i + 2].classList.add("rightItem");
+      } else {
+        water[i + 2].classList.remove("rightItem");
+        water[i + 2].classList.add("rightItemN");
+      }
     }
-    if (
-      window.scrollY >= water[i].offsetTop &&
-      window.scrollY < water[i + 3].offsetTop
-    ) {
-      water[i + 2].classList.remove("rightItemN");
-      water[i + 2].classList.add("rightItem");
-    } else {
-      water[i + 2].classList.remove("rightItem");
-      water[i + 2].classList.add("rightItemN");
+    if (i >= 1) {
+      if (
+        window.scrollY >= water[i].offsetTop &&
+        window.scrollY < water[i + 3].offsetTop
+      ) {
+        ///0,3//1,4//2,5
+        water[i + 2].classList.remove("rightItemN"); //2//3//4
+        water[i + 2].classList.add("rightItem");
+      } else {
+        water[i + 2].classList.remove("rightItem");
+        water[i + 2].classList.add("rightItemN");
+      }
     }
   }
   if (
@@ -114,22 +130,22 @@ window.onscroll = () => {
     navLinks[2].className += " active";
     for (let i = 0; i < 4; i++) {
       if (i % 2 != 0) {
-        person[i].classList.remove("leftItemsN");//left
-        person[i].classList.add("leftItems");
+        person[i].classList.remove("rightItemN"); //left
+        person[i].classList.add("rightItem");
       } else {
-        person[i].classList.remove("rightItemN");
-        person[i].classList.add("rightItem");//right
+        person[i].classList.remove("leftItemsN");
+        person[i].classList.add("leftItems"); //right
       }
     }
   } else {
     for (let i = 0; i < 4; i++) {
-        if (i % 2 != 0) {
-      person[i].classList.remove("leftItems");
-      person[i].classList.add("leftItemsN");
-    } else {
-      person[i].classList.remove("rightItem");
-      person[i].classList.add("rightItemN");
-    }
+      if (i % 2 != 0) {
+        person[i].classList.remove("rightItem");
+        person[i].classList.add("rightItemN");
+      } else {
+        person[i].classList.remove("leftItems");
+        person[i].classList.add("leftItemsN");
+      }
     }
   }
 
